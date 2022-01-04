@@ -26,7 +26,7 @@
 **1 - Construa uma interface que liste todos os developers e seus dados conforme a API acima;**
 
     
-**2 - Agora você deve permitir que um novo developer seja incluída;**
+**2 - Agora você deve permitir que um novo developer seja incluído;**
 
 **Endpoint:** /developer **(POST)**
 
