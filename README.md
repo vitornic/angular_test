@@ -9,7 +9,7 @@
 # GitHub
 
 - Faça um *fork* do projeto no GitHub;
-- Adicione @helena-app-dev como um colaborador do seu *fork*. Você pode facilmente fazer isso em https://github.com/`seu-usuario`/angular-test
+- Adicione @muriloecfaria como um colaborador do seu *fork*. Você pode facilmente fazer isso em https://github.com/`seu-usuario`/angular-test
 /settings/collaboration;
 - Quando iniciar o teste, faça um *commit* vazio com a mensagem `iniciando teste` e quando finalizar, faça um *commit* com a mensagem `finalizando teste`;
 - Faça vários *commits* com o objetivo de demonstrar a construção da solução;
