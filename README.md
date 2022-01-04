@@ -26,7 +26,7 @@
 **1 - Construa uma interface que liste todos os developers e seus dados conforme a API acima;**
 
     
-**2 - Agora você deve permitir que uma nova empresa seja incluída;**
+**2 - Agora você deve permitir que um novo developer seja incluída;**
 
 **Endpoint:** /developer **(POST)**
 
@@ -48,7 +48,7 @@ Informações:
 
 - Payload igual ao de inclusão
     
-**4 - Agora você deve permitir que uma empresa seja excluída;**
+**4 - Agora você deve permitir que um developer seja excluído;**
 
 **Endpoint:** /developer/:id **(DELETE)**
 
