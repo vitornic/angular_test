@@ -1,1 +1,59 @@
-<p>developers works!</p>
+<div class="mat-elevation-z8">
+  <div *ngIf="developers$ | async as developers; else loading">
+    <table mat-table [dataSource]="developers" class="mat-elevation-z8">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Avatar Column -->
+      <ng-container matColumnDef="avatar">
+        <th mat-header-cell *matHeaderCellDef>avatar</th>
+        <!-- <td mat-cell *matCellDef="let element"> <img src={{element.avatar}}> </td> -->
+        <td mat-cell *matCellDef="let element">{{ element.avatar }}</td>
+      </ng-container>
+
+      <!-- CreatedAt Column -->
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef>createdAt</th>
+        <td mat-cell *matCellDef="let element">{{ element.createdAt }}</td>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button (click)="Delete(element.id)" color="warn">
+            Delete
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Update Column -->
+      <ng-container matColumnDef="Update">
+        <th mat-header-cell *matHeaderCellDef>Update</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button (click)="Update(element.id)" color="basic">
+            Update
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-pinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+</div>

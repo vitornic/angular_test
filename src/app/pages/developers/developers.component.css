@@ -1,0 +1,11 @@
+table {
+  width: 99%;
+}
+
+.loading-pinner {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

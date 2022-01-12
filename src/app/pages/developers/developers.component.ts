@@ -1,15 +1,61 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IDevelopers } from 'src/app/models/developers';
+import { DevelopersService } from 'src/app/services/developers.service';
+import { catchError, Observable, of } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-developers',
   templateUrl: './developers.component.html',
-  styleUrls: ['./developers.component.css']
+  styleUrls: ['./developers.component.css'],
 })
-export class DevelopersComponent implements OnInit {
+export class DevelopersComponent {
+  displayedColumns: string[] = [
+    'id',
+    'avatar',
+    'name',
+    'createdAt',
+    'Update',
+    'Delete',
+  ];
 
-  constructor() { }
+  developers$: Observable<IDevelopers[]>;
 
-  ngOnInit(): void {
+  constructor(
+    private developersService: DevelopersService,
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
+  ) {
+    this.developers$ = this.developersService.findAll().pipe(
+      catchError((err) => {
+        this._snackBar.open(
+          'Algo deu errado, tente atualizar a página!',
+          'Close'
+        );
+        return of([]);
+      })
+    );
   }
 
+  findAll() {
+    this.developers$ = this.developersService.findAll().pipe(
+      catchError((err) => {
+        this._snackBar.open(
+          'Algo deu errado, tente atualizar a página!',
+          'Close'
+        );
+        return of([]);
+      })
+    );
+  }
+
+  Delete(id: number) {
+    this.developersService.deleteDev(id).subscribe((res: any) => {
+      this._snackBar.open(`Registro ${res.id} deletado com sucesso`, 'Close');
+      this.findAll();
+    });
+  }
+
+  Update(id: number) {}
 }
