@@ -17,6 +17,14 @@
       </ng-container>
 
       <!-- Avatar Column -->
+      <ng-container matColumnDef="avatarPic">
+        <th mat-header-cell *matHeaderCellDef>Picture</th>
+        <td mat-cell *matCellDef="let element">
+          <img src="{{ element.avatar }}" />
+        </td>
+      </ng-container>
+
+      <!-- Avatar Column -->
       <ng-container matColumnDef="avatar">
         <th mat-header-cell *matHeaderCellDef>avatar</th>
         <!-- <td mat-cell *matCellDef="let element"> <img src={{element.avatar}}> </td> -->

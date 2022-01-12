@@ -15,6 +15,7 @@ import { UpdateDevelopersComponent } from '../update-developers/update-developer
 export class DevelopersComponent {
   displayedColumns: string[] = [
     'id',
+    'avatarPic',
     'avatar',
     'name',
     'createdAt',
