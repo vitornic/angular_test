@@ -9,3 +9,8 @@ table {
   align-items: center;
   justify-content: center;
 }
+
+.btnAdd {
+  width: 99%;
+  padding: 10px;
+}

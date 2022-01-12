@@ -4,6 +4,7 @@ import { DevelopersService } from 'src/app/services/developers.service';
 import { catchError, Observable, of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { AddDevelopersComponent } from '../add-developers/add-developers.component';
 
 @Component({
   selector: 'app-developers',
@@ -48,6 +49,25 @@ export class DevelopersComponent {
         return of([]);
       })
     );
+  }
+
+  addDev() {
+    const dialogRef = this.dialog.open(AddDevelopersComponent);
+
+    dialogRef
+      .afterClosed()
+      .pipe(
+        catchError((err) => {
+          this._snackBar.open(
+            'Algo deu errado, tente atualizar a página!',
+            'Close'
+          );
+          return of([]);
+        })
+      )
+      .subscribe((result) => {
+        this.findAll();
+      });
   }
 
   Delete(id: number) {

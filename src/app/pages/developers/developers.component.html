@@ -1,4 +1,7 @@
 <div class="mat-elevation-z8">
+  <button mat-raised-button class="btnAdd" (click)="addDev()" color="basic">
+    Add
+  </button>
   <div *ngIf="developers$ | async as developers; else loading">
     <table mat-table [dataSource]="developers" class="mat-elevation-z8">
       <!-- Id Column -->

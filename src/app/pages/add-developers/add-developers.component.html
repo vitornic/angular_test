@@ -1,0 +1,20 @@
+<form [formGroup]="formulario" (ngSubmit)="enviarDados()" class="formulario">
+  <fieldset>
+    <div>
+      <label for="name">Nome: </label>
+      <input type="text" formControlName="name" />
+    </div>
+    <br />
+    <div>
+      <label for="avatar">Avatar: </label>
+      <input type="text" formControlName="avatar" />
+    </div>
+
+    <br />
+    <div>
+      <button>Enviar dados</button><input type="reset" value="limpar" />
+    </div>
+
+    <div></div>
+  </fieldset>
+</form>
