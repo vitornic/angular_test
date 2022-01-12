@@ -19,9 +19,10 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddDevelopersComponent } from './pages/add-developers/add-developers.component';
+import { UpdateDevelopersComponent } from './pages/update-developers/update-developers.component';
 
 @NgModule({
-  declarations: [AppComponent, DevelopersComponent, AddDevelopersComponent],
+  declarations: [AppComponent, DevelopersComponent, AddDevelopersComponent, UpdateDevelopersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
